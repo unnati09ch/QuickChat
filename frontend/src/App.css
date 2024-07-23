@@ -1,0 +1,25 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Work+Sans:wght@300&display=swap');
+
+.App {
+ min-height: 100vh;
+ display: flex;
+ background: url("https://img.freepik.com/free-vector/circles-background-dark-tones_60389-166.jpg?size=626&ext=jpg");
+ background-size: cover;
+ background-position: center;
+}
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(136, 136, 136, 0.281);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+

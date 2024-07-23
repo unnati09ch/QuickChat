@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "ChatMingle",
+			"path": "../../../../../../../../ChatMingle"
+		},
+		{
+			"name": "Chatting",
+			"path": "../../.."
+		}
+	],
+	"settings": {}
+}
