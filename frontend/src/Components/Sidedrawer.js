@@ -53,7 +53,7 @@ const Sidedrawer = () => {
 
       },
     };
-      const {data}=await axios.get(`http://localhost:5000/api/user/getusers?search=${search}`,config);
+      const {data}=await axios.get(`https://chat-mingle-backend.onrender.com/api/user/getusers?search=${search}`,config);
       setLoading(false);
       setSearchResult(data);
       
@@ -87,7 +87,7 @@ const Sidedrawer = () => {
   
       },
     };
-      const {data}=await axios.post("http://localhost:5000/api/chats/",{userId},config);
+      const {data}=await axios.post("https://chat-mingle-backend.onrender.com/api/chats/",{userId},config);
       if(!chats.find((c)=>c._id==data._id)) setChats([data,...chats]);
 
       setSelectedChat(data);
