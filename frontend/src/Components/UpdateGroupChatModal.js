@@ -55,7 +55,7 @@ const UpdateGroupChatModal = ({fetchAgain,setFetchAgain}) => {
   
         },
       };
-        const {data}=await axios.put("http://localhost:5000/api/chats/remove",{
+        const {data}=await axios.put("https://chat-mingle-backend.onrender.com/api/chats/remove",{
           chatId:selectedChat._id,
         userId:member._id
 
@@ -123,7 +123,7 @@ const UpdateGroupChatModal = ({fetchAgain,setFetchAgain}) => {
   
         },
       };
-        const {data}=await axios.put("http://localhost:5000/api/chats/add",{
+        const {data}=await axios.put("https://chat-mingle-backend.onrender.com/api/chats/add",{
           chatId:selectedChat._id,
         userId:member._id
 
@@ -157,7 +157,7 @@ const UpdateGroupChatModal = ({fetchAgain,setFetchAgain}) => {
   
         },
       };
-        const {data}=await axios.put("http://localhost:5000/api/chats/rename",{
+        const {data}=await axios.put("https://chat-mingle-backend.onrender.com/api/chats/rename",{
           Id:selectedChat._id,
           name:groupName
 
