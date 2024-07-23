@@ -53,7 +53,7 @@ const SingleChat = ({fetchAgain,setFetchAgain}) => {
         },
       };
       setnewMessage("");
-        const {data}=await axios.post("http://localhost:5000/api/message",{
+        const {data}=await axios.post("https://chat-mingle-backend.onrender.com/api/message",{
           chatId:selectedChat._id,
           content:newmessage
         
@@ -89,7 +89,7 @@ const SingleChat = ({fetchAgain,setFetchAgain}) => {
       },
     };
     
-      const {data}=await axios.get(`http://localhost:5000/api/message/${selectedChat._id}`,
+      const {data}=await axios.get(`https://chat-mingle-backend.onrender.com/api/message/${selectedChat._id}`,
         
       config);
       console.log(data);
