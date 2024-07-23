@@ -30,7 +30,7 @@ const Signup = () => {
   {
     setPicLoading(true);
     try{
-    const response=await axios.post("http://localhost:5000/api/user/signup",{name,email,password,confirmpassword,pic},{
+    const response=await axios.post("https://chat-mingle-backend.onrender.com/api/user/signup",{name,email,password,confirmpassword,pic},{
       headers: {
           'Content-Type': 'application/json' // Set the content type
         }
