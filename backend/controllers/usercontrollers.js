@@ -8,9 +8,7 @@ exports.login=async (req,res)=>{
   res.send({
 message:"Please fill all the fields",
 });
-//res.send("enter fields");
 
-//throw new Error("enter all fields");
 
 else{
    const result = await User.findOne({ email: req.body.email });
@@ -19,7 +17,7 @@ else{
   bcrypt.compare(req.body.password,result.password,function(err,resul){
     
       if(resul){
-        console.log(result.name);
+       
     
 
      res.send({
@@ -39,7 +37,7 @@ else{
      res.send({
       message:"wrong pas",
      });
-    //res.send("wrong pas")
+ 
     }
      
     });
@@ -49,8 +47,7 @@ else{
 res.send({
   message:"user not found",
 });
-//throw new Error("user not found");
-//res.send("user not found");
+
 
   }
 }
@@ -61,9 +58,12 @@ res.send({
 
 
 exports.signup=async(req,res)=>{
-  console.log("got");
-  if(!req.body.email||!req.body.name||!req.body.password||!req.body.confirmpassword)
-  res.send("Please fill all the fields");
+  
+  if(!req.body.email||!req.body.name||!req.body.password||!req.body.confirmpassword){
+    res.send({
+      message:"Fill all the fields",
+     });
+    }
 else{
   try{
 
@@ -73,7 +73,7 @@ else{
       {
         if(req.body.confirmpassword==req.body.password){
 
-            console.log("success");
+           
        
           const user=new User({
            
@@ -86,21 +86,32 @@ else{
          
        await user.save();
        const a=generatetoken(user._id);
-    //  console.log(a);
-        console.log("signed succesfully");
-        res.send()
+    
+        res.send({
+          _id:user._id,
+          token:a,
+          name:user.name,
+          email:user.email,
+          pic:user.pic,
+          isAdmin:user.isAdmin
+    
+    
+         });
         }
          
       else{
        
-    console.log("passdont match");
-        res.send("passwords dont match");
+        res.send({
+          message:"passwords dont match",
+         });
       }
     }
       else
       {
-        //console.log(result.email);
-        res.send("user exists"); 
+       
+        res.send({
+          message:"user exists",
+         });
         
       }
     }
@@ -123,7 +134,7 @@ exports.Allusers=async(req,res)=>{
   //const users = await User.find(keyword);
 
   const users = await User.find(keyword).find({ _id: { $ne: req.user._id } });
-  console.log("got")
+ 
   res.send(users);
 
 
