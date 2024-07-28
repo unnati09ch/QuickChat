@@ -37,7 +37,7 @@ const Signup = () => {
       });
     console.log("signup got data");
     console.log(response);
-    if(response.data){
+    if(response.data.message){
       toast({
         title: "Error Occured!",
         description: response.data,
@@ -61,6 +61,9 @@ const Signup = () => {
       position: "bottom",
     });
     setPicLoading(false);
+     localStorage.setItem("userinfo",JSON.stringify(response.data));
+  
+     navigate("/chats");
 
       
      
