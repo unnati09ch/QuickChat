@@ -41,7 +41,7 @@ const SingleChat = ({fetchAgain,setFetchAgain}) => {
     //console.log(notification);
     const sendMessage=async(event)=>
     {
-      console.log("key pressed");
+      
       if(event.key=="Enter" && newmessage)
       {
        socket.emit("stop typing",selectedChat._id);
