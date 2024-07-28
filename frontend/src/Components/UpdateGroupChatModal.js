@@ -195,7 +195,7 @@ const UpdateGroupChatModal = ({fetchAgain,setFetchAgain}) => {
   
         },
       };
-        const {data}=await axios.get(`http://localhost:5000/api/user/getusers?search=${search}`,config);
+        const {data}=await axios.get(`"https://chat-mingle-backend.onrender.com/api/user/getusers?search=${search}`,config);
         setLoading(false);
         SetGroupMembers(data);
         
