@@ -113,7 +113,7 @@ const SingleChat = ({fetchAgain,setFetchAgain}) => {
 
   };
   useEffect(()=>{
-    socket=io("localhost:5000/");
+    socket=io("https://chat-mingle-backend.onrender.com");
     socket.emit("setup",user);
     socket.on("connected", () => setSocketConnected(true));
     socket.on("typing", () => setIsTyping(true));
@@ -193,13 +193,23 @@ const typingHandler=(e)=>{
         icon={<ArrowBackIcon/>}
         onClick={()=>setSelectedChat("")}
          />
-         <Text
+       <Text
          fontSize={{ base: "28px", md: "30px" }}
          fontFamily="Work sans"
-         >{selectedChat.isGroupChat?selectedChat.chatName:getSender(selectedChat.users,user.name)}</Text>
-         {!selectedChat.isGroupChat?<Profilemodal user={getSenderFull(selectedChat.users,user)} />
-         :<UpdateGroupChatModal fetchAgain={fetchAgain} setFetchAgain={setFetchAgain}/>
-         }  
+         >{messages &&
+          (!selectedChat.isGroupChat ? (
+            <>
+              {getSender(selectedChat.users,user)}
+              <Profilemodal
+                user={getSenderFull( selectedChat.users,user)}
+              />
+            </>
+          ) :(
+            <>
+        <UpdateGroupChatModal fetchAgain={fetchAgain} setFetchAgain={setFetchAgain}/>
+        </>
+          ))}
+         </Text> 
          </Box>
          <Box
           display="flex"
