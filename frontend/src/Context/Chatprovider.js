@@ -13,29 +13,15 @@ const ChatProvider = ({ children }) => {
     const navigate=useNavigate();
     
     useEffect(()=>{
-        const userInfo=JSON.parse(localStorage.getItem("userInfo"));
-        setUser(userInfo);
-        if(!userInfo)navigate("/");
-    //    else if (userInfo ) {
-    //         const tokenExpired = isTokenExpired(userInfo.token);
-    //         if (tokenExpired) {
-    //           localStorage.removeItem("userInfo");
-    //           navigate("/")
-    //         }
-    //     }
+        const userinfo=JSON.parse(localStorage.getItem("userinfo"));
+        setUser(userinfo);
+        if(!userinfo)navigate("/");
+   
 
 
     },[navigate]);
 
-    // function isTokenExpired(token) {
-    //     try {
-    //       const decoded = jwt_decode(token);
-    //       const currentTime = Date.now() / 1000; // Convert to seconds
-    //       return decoded.exp < currentTime;
-    //     } catch (error) {
-    //       return true; // If there's an error decoding, assume token is expired
-    //     }
-    // }
+   
     return(
     
         <ChatContext.Provider
