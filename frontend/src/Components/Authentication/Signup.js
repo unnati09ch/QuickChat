@@ -35,8 +35,7 @@ const Signup = () => {
           'Content-Type': 'application/json' // Set the content type
         }
       });
-    console.log("signup got data");
-    console.log(response);
+  
     if(response.data.message){
       toast({
         title: "Error Occured!",
@@ -88,7 +87,7 @@ const Signup = () => {
       });
       return;
     }
-    console.log(pics);
+   
     if (pics.type === "image/jpeg" || pics.type === "image/png") {
       const data = new FormData();
       data.append("file", pics);
