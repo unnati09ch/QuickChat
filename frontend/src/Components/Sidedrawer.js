@@ -29,7 +29,7 @@ const Sidedrawer = () => {
   const[loading,setLoading]=useState(false);
   
   const logout=()=>{
-    localStorage.removeItem("userInfo");
+    localStorage.removeItem("userinfo");
     navigate("/");
     
   }
