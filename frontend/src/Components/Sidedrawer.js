@@ -128,7 +128,7 @@ const Sidedrawer = () => {
         </Button>
         </Tooltip>
         <Text d={{base:"none",md:"flex"}} fontSize={'2xl'}>
-            Talk-A-Tive
+            QuickChat
         </Text>
         <div>
         <Menu>
