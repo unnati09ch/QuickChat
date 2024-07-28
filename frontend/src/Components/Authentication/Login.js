@@ -30,8 +30,7 @@ const Login = () => {
           'Content-Type': 'application/json' // Set the content type
         }
       });
-    console.log("login got data");
-    //const data = await response.json();
+   
     if(response.data.message){
       toast({
         title: "Error Occured!",
@@ -54,14 +53,14 @@ const Login = () => {
       isClosable: true,
       position: "bottom",
     });
-    localStorage.setItem("userInfo",JSON.stringify(response.data));
-    console.log(localStorage.getItem("userInfo"));
+    localStorage.setItem("userinfo",JSON.stringify(response.data));
+   
     navigate("/chats");
 
       }
   }
   catch(error){
-    console.log("error occuedds");
+    console.log("error occurrs");
   }
 
   }
@@ -87,7 +86,7 @@ const Login = () => {
   <Button onClick={handleSubmit}width="100%" colorScheme='blue'marginTop="12px">Login</Button>
 
       </VStack>
-      {/* //<ToastContainer /> */}
+   
      
       
     </div>
