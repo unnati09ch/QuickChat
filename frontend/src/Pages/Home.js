@@ -23,7 +23,7 @@ const Home = () => {
         borderRadius="lg"
         borderWidth="1px"
         >
-          <Text textAlign="center" fontSize="3xl" fontFamily="Work sans">Talk-A-Tive</Text>
+          <Text textAlign="center" fontSize="3xl" fontFamily="Work sans">QuickChat</Text>
        
       </Box>
       <Box p={3} bg="white" width="100%" borderRadius="lg" borderWidth="1px">
