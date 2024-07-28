@@ -6,7 +6,7 @@ export const getSender=(users,loggeduser)=>{
    
 
    export const getSenderFull=(users,loggeduser)=>{
-      return users[0]._id=loggeduser._id?users[0]:users[1];
+      return users[0]._id==loggeduser._id?users[1]:users[0];
       
 
    }
